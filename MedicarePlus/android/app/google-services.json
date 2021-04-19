@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "49188599533",
+    "project_id": "medicareplus-a0861",
+    "storage_bucket": "medicareplus-a0861.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49188599533:android:39b31047ed11b6435a7ee4",
+        "android_client_info": {
+          "package_name": "com.example.medicareplus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49188599533-v33lhv01lancl9ijk43ij2v9df8hafu0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.medicareplus",
+            "certificate_hash": "c00b8ebfe0f328e567c8bd9218d219572e0ba274"
+          }
+        },
+        {
+          "client_id": "49188599533-pe35h1bq0uj7nhcravj4mpvel0d0j59m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLmMvNxRea44KX-ueCfyjIVlCePY09i9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49188599533-pe35h1bq0uj7nhcravj4mpvel0d0j59m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
