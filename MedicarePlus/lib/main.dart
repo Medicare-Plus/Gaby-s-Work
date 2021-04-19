@@ -5,8 +5,7 @@ import 'package:flutter_application_1/pages/More.dart';
 import 'package:flutter_application_1/pages/Notification.dart';
 import 'package:flutter_application_1/pages/home.dart';
 import 'package:flutter_application_1/pages/StartMenu.dart';
-import 'package:flutter_application_1/pages/plan.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+
 import 'package:splashscreen/splashscreen.dart';
 
 void main() async {
