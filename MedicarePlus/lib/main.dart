@@ -45,7 +45,7 @@ class IntroScreen extends StatelessWidget {
   }
 }
 
-class NavBar extends StatefulWidget {
+/*class NavBar extends StatefulWidget {
   // Nav Bar bby
   @override
   _NavBarState createState() => _NavBarState();
@@ -120,4 +120,4 @@ class _NavBarState extends State<NavBar> {
       ),
     );
   }
-}
+}*/

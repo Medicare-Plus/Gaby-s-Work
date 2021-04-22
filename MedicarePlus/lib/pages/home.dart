@@ -14,7 +14,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: NavBar(), // Bottom Nav Bar
+      //body: NavBar(), // Bottom Nav Bar
       appBar: AppBar(
         title: Text('Home'),
         backgroundColor: Color(0xff234499),
