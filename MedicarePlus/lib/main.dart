@@ -160,20 +160,19 @@ class HomeBase extends StatelessWidget {
 
                     Column(children: <Widget>[
                       //this widget here is placed because it is the widget outside of stack but rather inside column for the list, we made this stack to put stuff on top of the bg
-                      SizedBox(height: 15),
+                      SizedBox(height: 30),
                       Container(
-                          height: 50,
                           child: Align(
-                              //positioning(This is sort  of a janky method)
-                              alignment: AlignmentDirectional.bottomCenter,
-                              child: Text(
-                                "Hello there!! (sample card for now)",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0xff234499),
-                                    fontSize: 20),
-                              ))),
-
+                        //positioning(This is sort  of a janky method)
+                        alignment: AlignmentDirectional.bottomCenter,
+                        child: Text(
+                          "Welcome (name)",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff234499),
+                              fontSize: 20),
+                        ),
+                      )),
                       SizedBox(
                         height: 15,
                       ), //janky spacing
@@ -190,7 +189,7 @@ class HomeBase extends StatelessWidget {
                         height: 15,
                       ),
                       SizedBox(
-                        width: 150,
+                        width: 180,
                         height: 50,
                         child: ElevatedButton(
                             //this is a button type, flatbuttons are outdated
@@ -200,7 +199,7 @@ class HomeBase extends StatelessWidget {
                                     MaterialStateProperty.all<Color>(
                                         Color(0xff234499))),
                             child: Text(
-                              "General Information",
+                              "View Benefits",
                               style: TextStyle(
                                   color: Colors
                                       .white), //textstyle is forr colors and fonts to make it bold or italic
@@ -250,7 +249,7 @@ class HomeBase extends StatelessWidget {
                                         size:
                                             60), //This is the icon and of course there is the icon type. color and size
                                     Text(
-                                      "Consultaiton",
+                                      "Our Partners",
                                       style: TextStyle(
                                           fontSize: 10, color: Colors.white),
                                     )
@@ -267,9 +266,10 @@ class HomeBase extends StatelessWidget {
                                           Color(0xff234499))),
                               child: Center(
                                   child: Column(children: <Widget>[
-                                Icon(Icons.list, color: Colors.white, size: 60),
+                                Icon(Icons.sticky_note_2_outlined,
+                                    color: Colors.white, size: 60),
                                 Text(
-                                  "Medical Button",
+                                  "Medical Data",
                                   style: TextStyle(
                                       fontSize: 10, color: Colors.white),
                                 )

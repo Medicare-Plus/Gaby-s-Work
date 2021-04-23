@@ -23,7 +23,7 @@ dependencies:
   mailer: ^3.0.3
   flutter_icons: ^1.0.0+1 
   persistent_bottom_nav_bar: any
-
+  smooth_page_indicator: ^0.2.3
 
 dev_dependencies:
   flutter_test:
