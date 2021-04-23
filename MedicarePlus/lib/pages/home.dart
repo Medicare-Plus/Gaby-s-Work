@@ -14,30 +14,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //body: NavBar(), // Bottom Nav Bar
-      appBar: AppBar(
-        title: Text('Home'),
-        backgroundColor: Color(0xff234499),
-        actions: <Widget>[
-          IconButton(
-            //logout button
-            icon: Icon(
-              Icons.exit_to_app, //logout button
-              color: Colors.white,
-            ),
-            onPressed: () {
-              //logout button
-              FirebaseAuth auth = FirebaseAuth.instance;
-              auth.signOut().then((res) {
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => EmailLogIn()),
-                    (Route<dynamic> route) => false);
-              });
-            },
-          )
-        ],
-      ),
+      body: NavBar(), // Bottom Nav Bar
     );
   }
 }
