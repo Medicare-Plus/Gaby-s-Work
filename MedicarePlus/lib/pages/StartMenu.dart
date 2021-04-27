@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_application_1/pages/email_signup.dart';
+import 'package:flutter_application_1/Widgets/Auth.dart';
 import 'home.dart';
 
 class EmailLogIn extends StatefulWidget {

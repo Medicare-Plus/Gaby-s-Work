@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'home.dart';
-import 'email_signup.dart';
 
 class More extends StatelessWidget {
   @override

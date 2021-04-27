@@ -1,12 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/More.dart';
-import 'package:flutter_application_1/pages/Notification.dart';
 import 'package:flutter_application_1/pages/home.dart';
 import 'package:flutter_application_1/pages/StartMenu.dart';
-import 'package:flutter_application_1/pages/plan.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_application_1/pages/intro.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main() async {
@@ -26,23 +23,6 @@ class MyApp extends StatelessWidget {
       ),
       home: IntroScreen(),
     );
-  }
-}
-
-class IntroScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    User result = FirebaseAuth.instance.currentUser;
-    return new SplashScreen(
-        navigateAfterSeconds:
-            result != null ? Home(uid: result.uid) : EmailLogIn(),
-        seconds: 5,
-        image: Image.asset('assets/images/title.png', fit: BoxFit.scaleDown),
-        backgroundColor: Colors.white,
-        styleTextUnderTheLoader: new TextStyle(),
-        photoSize: 100.0,
-        onClick: () => print("flutter"),
-        loaderColor: Color(0xff61c198));
   }
 }
 
@@ -631,15 +611,25 @@ class MoreBase extends StatelessWidget {
                 width: 350,
                 height: 50,
                 child: TextButton.icon(
-                    icon: Icon(Icons.logout, color: Color(0xff61c198)),
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            Color(0xffeff2f8))),
-                    label: Text(
-                      "Log Out",
-                      style: TextStyle(color: Color(0xff234499)),
-                    ),
-                    onPressed: () {}),
+                  icon: Icon(Icons.logout, color: Color(0xff61c198)),
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Color(0xffeff2f8))),
+                  label: Text(
+                    "Log Out",
+                    style: TextStyle(color: Color(0xff234499)),
+                  ),
+                  onPressed: () {
+                    //logout button
+                    FirebaseAuth auth = FirebaseAuth.instance;
+                    auth.signOut().then((res) {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (context) => EmailLogIn()),
+                          (Route<dynamic> route) => false);
+                    });
+                  },
+                ),
               ),
 
               SizedBox(

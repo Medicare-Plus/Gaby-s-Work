@@ -15,15 +15,16 @@ dependencies:
 
 
   cupertino_icons:
-  firebase_core: ^0.5.0+1
-  firebase_database: ^4.1.1
-  firebase_auth: ^0.18.1+2
+  firebase_core: "^0.7.0"
+  firebase_database: "^6.0.0"
+  firebase_auth: "^0.20.1"
   splashscreen : 1.2.0
   flutter_signin_button: ^1.0.0
   mailer: ^3.0.3
   flutter_icons: ^1.0.0+1 
   persistent_bottom_nav_bar: any
   smooth_page_indicator: ^0.2.3
+  cloud_firestore: "^0.16.0+1"
 
 dev_dependencies:
   flutter_test:
