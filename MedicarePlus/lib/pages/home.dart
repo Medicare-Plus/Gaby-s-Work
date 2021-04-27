@@ -1,11 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import 'package:flutter_application_1/Widgets/Nav.dart';
+import 'package:flutter_application_1/Widgets/auth_service.dart';
+import 'package:flutter_application_1/pages/StartMenu.dart';
 import '../main.dart';
-import 'StartMenu.dart';
+import 'intro.dart';
 
 class Home extends StatelessWidget {
   Home({this.uid});
   final String uid;
+  static String id = 'homepage';
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +21,7 @@ class Home extends StatelessWidget {
 }
 
 class HomeBase extends StatefulWidget {
+  static String id = 'homepage';
   @override
   _HomeBaseState createState() => _HomeBaseState();
 }
@@ -41,7 +47,8 @@ class _HomeBaseState extends State<HomeBase> {
                     auth.signOut().then((res) {
                       Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => EmailLogIn()),
+                          MaterialPageRoute(
+                              builder: (context) => SignInScreen()),
                           (Route<dynamic> route) => false);
                     });
                   },

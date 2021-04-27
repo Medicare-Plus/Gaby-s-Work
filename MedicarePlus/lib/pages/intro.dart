@@ -1,8 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Widgets/auth_service.dart';
+
+import 'package:flutter_application_1/pages/StartMenu.dart';
 import 'package:splashscreen/splashscreen.dart';
-import 'StartMenu.dart';
+
 import 'home.dart';
 
 class IntroScreen extends StatelessWidget {
@@ -11,7 +14,7 @@ class IntroScreen extends StatelessWidget {
     User result = FirebaseAuth.instance.currentUser;
     return new SplashScreen(
         navigateAfterSeconds:
-            result != null ? Home(uid: result.uid) : EmailLogIn(),
+            result != null ? Home(uid: result.uid) : SignInScreen(),
         seconds: 5,
         image: Image.asset('assets/images/title.png', fit: BoxFit.scaleDown),
         backgroundColor: Colors.white,

@@ -1,12 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Widgets/auth_service.dart';
-
 import 'package:flutter_application_1/Widgets/provider_widget.dart';
 import 'package:flutter_application_1/models/user_main.dart';
 import 'package:flutter_application_1/pages/StartMenu.dart';
-import 'package:flutter_application_1/pages/intro.dart';
 import 'package:intl/intl.dart';
+
+import 'intro.dart';
 
 class MoreBase extends StatelessWidget {
   @override
@@ -268,7 +268,31 @@ class _ProfileViewState extends State<ProfileView> {
                 ),
               );
             }),
-        showSignOut(context, authData.isAnonymous),
+        SizedBox(height: 15),
+        SizedBox(
+          width: 350,
+          height: 50,
+          child: TextButton.icon(
+            icon: Icon(Icons.logout, color: Color(0xff61c198)),
+            style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Color(0xffeff2f8))),
+            label: Text(
+              "Log Out",
+              style: TextStyle(color: Color(0xff234499)),
+            ),
+            onPressed: () {
+              //logout button
+              FirebaseAuth auth = FirebaseAuth.instance;
+              auth.signOut().then((res) {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignInScreen()),
+                    (Route<dynamic> route) => false);
+              });
+            },
+          ),
+        ),
         RaisedButton(
           child: Text("Edit User"),
           onPressed: () {
@@ -290,28 +314,6 @@ class _ProfileViewState extends State<ProfileView> {
       user.homeCountry = result.data['homeCountry'];
       user.admin = result.data['admin'];
     });
-  }
-
-  Widget showSignOut(context, bool isAnonymous) {
-    if (isAnonymous == true) {
-      return RaisedButton(
-        child: Text("Sign In To Save Your Data"),
-        onPressed: () {
-          Navigator.of(context).pushNamed('/convertUser');
-        },
-      );
-    } else {
-      return RaisedButton(
-        child: Text("Sign Out"),
-        onPressed: () {
-          try {
-            Provider.of(context).auth.signOut();
-          } catch (e) {
-            print(e);
-          }
-        },
-      );
-    }
   }
 
   Widget adminFeature() {
@@ -358,30 +360,6 @@ class _ProfileViewState extends State<ProfileView> {
                           ),
                         ),
                       ),
-                    )
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    RaisedButton(
-                      child: Text('Save'),
-                      color: Colors.green,
-                      textColor: Colors.white,
-                      onPressed: () async {
-                        user.homeCountry = _userCountryController.text;
-                        setState(() {
-                          _userCountryController.text = user.homeCountry;
-                        });
-                        final uid =
-                            await Provider.of(context).auth.getCurrentUID();
-                        await Provider.of(context)
-                            .db
-                            .collection('userData')
-                            .document(uid)
-                            .setData(user.toJson());
-                        Navigator.of(context).pop();
-                      },
                     )
                   ],
                 ),

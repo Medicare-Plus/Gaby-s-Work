@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_application_1/Widgets/Auth.dart';
+import 'package:flutter_application_1/Widgets/provider_widget.dart';
+import 'package:flutter_application_1/Widgets/widget.dart';
+
 import 'home.dart';
 
-class EmailLogIn extends StatefulWidget {
+/*class EmailLogIn extends StatefulWidget {
   @override
   _EmailLogInState createState() => _EmailLogInState();
 }
@@ -45,7 +47,7 @@ class _EmailLogInState extends State<EmailLogIn> {
                             setState(() {
                               isLoading = true;
                             });
-                            logIn();
+                            Navigator.of(context).pushReplacementNamed('/home');
                           }
                         },
                         child: Text('Sign In'),
@@ -109,29 +111,14 @@ class _EmailLogInState extends State<EmailLogIn> {
                             primary: MediTeal,
                             textStyle: TextStyle(fontSize: 20)),
                         onPressed: () {
-                          if (_formKey.currentState.validate()) {
-                            setState(() {
-                              isLoading = true;
-                            });
-                            logIn();
-                          }
+                          Navigator.pushNamed(context, ForgotPassword.id);
                         },
-                        child: Text('Forgot Password?'),
+                        child: Text(
+                          'Forgot Password?',
+                          style: TextStyle(color: Colors.teal, fontSize: 20),
+                        ),
                       ),
-              ),
-              Padding(
-                  padding: EdgeInsets.all(5.0),
-                  child: TextButton(
-                    child: Text("Don't Have Account"),
-                    style: TextButton.styleFrom(
-                        primary: MediBlue, textStyle: TextStyle(fontSize: 20)),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => EmailSignUp()),
-                      );
-                    },
-                  )),
+              )
             ]))));
   }
 
@@ -166,3 +153,4 @@ class _EmailLogInState extends State<EmailLogIn> {
     });
   }
 }
+*/
