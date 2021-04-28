@@ -2,8 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'home.dart';
-import 'email_signup.dart';
 
 class MoreBase extends StatelessWidget {
   @override

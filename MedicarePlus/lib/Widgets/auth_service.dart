@@ -231,6 +231,21 @@ class _SignInScreenState extends State<SignInScreen> {
                     style: TextStyle(color: Colors.teal, fontSize: 20),
                   ),
                 ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                      primary: Color(0xff234499),
+                      textStyle: TextStyle(fontSize: 20)),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed('/signUp');
+                  },
+                  child: Text(
+                    'Sign Up',
+                    style: TextStyle(color: Colors.teal, fontSize: 20),
+                  ),
+                ),
               )
             ]))));
   }
