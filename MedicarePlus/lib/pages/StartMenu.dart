@@ -5,7 +5,7 @@ import 'package:flutter_application_1/Widgets/widget.dart';
 
 import 'home.dart';
 
-/*class EmailLogIn extends StatefulWidget {
+/* class EmailLogIn extends StatefulWidget {
   @override
   _EmailLogInState createState() => _EmailLogInState();
 }
@@ -56,7 +56,9 @@ class _EmailLogInState extends State<EmailLogIn> {
               Padding(
                 padding: EdgeInsets.all(15.0),
                 child: TextFormField(
-                  controller: emailController,
+                 onSaved: (newEmail) {
+                      _email = newEmail;
+                    },
                   decoration: InputDecoration(
                     labelText: "Email Address",
                     enabledBorder: OutlineInputBorder(
@@ -80,8 +82,10 @@ class _EmailLogInState extends State<EmailLogIn> {
               Padding(
                 padding: EdgeInsets.all(15.0),
                 child: TextFormField(
+                  onSaved: (newPass) {
+                      _password = newPass;
+                    },
                   obscureText: true,
-                  controller: passwordController,
                   decoration: InputDecoration(
                     labelText: "Password",
                     enabledBorder: OutlineInputBorder(
@@ -153,4 +157,5 @@ class _EmailLogInState extends State<EmailLogIn> {
     });
   }
 }
+
 */

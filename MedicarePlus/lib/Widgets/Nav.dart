@@ -29,19 +29,19 @@ class _NavBarState extends State<NavBar> {
         items: [
           BottomNavigationBarItem(
             icon: new Icon(Icons.home),
-            title: new Text("Home"),
+            label: ("Home"),
           ),
           BottomNavigationBarItem(
             icon: new Icon(Icons.attach_money),
-            title: new Text("Plan"),
+            label: ("Plan"),
           ),
           BottomNavigationBarItem(
             icon: new Icon(Icons.notification_important_outlined),
-            title: new Text("Notification"),
+            label: ("Notification"),
           ),
           BottomNavigationBarItem(
             icon: new Icon(Icons.account_circle),
-            title: new Text("Profile"),
+            label:("Profile"),
           ),
         ],
         type: BottomNavigationBarType.fixed,

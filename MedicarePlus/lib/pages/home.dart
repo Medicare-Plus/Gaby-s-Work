@@ -27,6 +27,7 @@ class HomeBase extends StatefulWidget {
 }
 
 class _HomeBaseState extends State<HomeBase> {
+ 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -55,7 +56,7 @@ class _HomeBaseState extends State<HomeBase> {
                 )
               ],
             ),
-            body: SingleChildScrollView(
+             body: SingleChildScrollView(
                 //the sexy body has a function that will allow the pages to slide down
                 child: Center(
                     child: Column(
