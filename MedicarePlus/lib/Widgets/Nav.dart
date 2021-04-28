@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_application_1/pages/More.dart';
 import 'package:flutter_application_1/pages/home.dart';
-import 'package:flutter_application_1/pages/more.dart';
+import 'package:flutter_application_1/pages/home_base.dart';
+import 'package:flutter_application_1/pages/notif.dart';
 import 'package:flutter_application_1/pages/plan.dart';
 
 class NavBar extends StatefulWidget {
@@ -11,51 +11,61 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  int _currentIndex = 0;
+  @override
+  // Nav Bar bby
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static List<Widget> _widgetOptions = <Widget>[
+    HomeBase(),
+    PlanBase(),
+    Notif(),
+    MoreBase(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    final List<Widget> _children = [
-      HomeBase(),
-      PlanBase(),
-      MoreBase(),
-      ProfileView(),
-    ];
-
     return Scaffold(
-      body: _children[_currentIndex],
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTabTapped,
-        currentIndex: _currentIndex,
-        items: [
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            label: ("Home"),
+            icon: Icon(Icons.home),
+            label: 'Home',
+            backgroundColor: Colors.red,
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.attach_money),
-            label: ("Plan"),
+            icon: Icon(Icons.business),
+            label: 'Plan',
+            backgroundColor: Colors.green,
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.notification_important_outlined),
-            label: ("Notification"),
+            icon: Icon(Icons.school),
+            label: 'Notification',
+            backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(
-            icon: new Icon(Icons.account_circle),
-            label:("Profile"),
+            icon: Icon(Icons.settings),
+            label: 'More',
+            backgroundColor: Colors.pink,
           ),
         ],
         type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
         unselectedItemColor: Colors.white,
         selectedItemColor: Colors.tealAccent,
         backgroundColor: Colors.blue[900],
         iconSize: 32,
+        onTap: _onItemTapped,
       ),
     );
-  }
-
-  void onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
   }
 }

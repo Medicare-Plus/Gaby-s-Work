@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Widgets/auth_service.dart';
 
-import 'package:flutter_application_1/pages/StartMenu.dart';
 import 'package:flutter_application_1/pages/intro.dart';
 
 class PlanBase extends StatelessWidget {

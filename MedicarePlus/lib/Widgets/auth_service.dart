@@ -103,7 +103,6 @@ class PasswordValidator {
 
 class SignInScreen extends StatefulWidget {
   static String id = 'sign-in';
-  
 
   @override
   _SignInScreenState createState() => _SignInScreenState();
@@ -119,15 +118,13 @@ class _SignInScreenState extends State<SignInScreen> {
   String _password;
   bool isLoading = false;
 
- 
-
   Future signIn() async {
     _formKey.currentState.save();
     try {
       final user = await _auth.signInWithEmailAndPassword(
           email: _email, password: _password);
       if (user.user.emailVerified) {
-        Navigator.pushNamed(context, Home.id);
+        Navigator.of(context).pushReplacementNamed('/home');
       }
     } catch (e) {
       print(e);
@@ -170,14 +167,14 @@ class _SignInScreenState extends State<SignInScreen> {
               Padding(
                 padding: EdgeInsets.all(15.0),
                 child: TextFormField(
-                 onSaved: (newEmail) {
-                      _email = newEmail;
-                    },
+                  onSaved: (newEmail) {
+                    _email = newEmail;
+                  },
                   decoration: InputDecoration(
                     labelText: "Email Address",
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color:  Color(0xff61c198),
+                          color: Color(0xff61c198),
                           width: 3.0), // making the border color
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -197,8 +194,8 @@ class _SignInScreenState extends State<SignInScreen> {
                 padding: EdgeInsets.all(15.0),
                 child: TextFormField(
                   onSaved: (newPass) {
-                      _password = newPass;
-                    },
+                    _password = newPass;
+                  },
                   obscureText: true,
                   decoration: InputDecoration(
                     labelText: "Password",
@@ -222,22 +219,19 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
               Padding(
                 padding: EdgeInsets.all(10.0),
-                child: isLoading
-                    ? CircularProgressIndicator()
-                    : TextButton(
-                        style: TextButton.styleFrom(
-                            primary: Color(0xff234499),
-                            textStyle: TextStyle(fontSize: 20)),
-                        onPressed: () {
-                          Navigator.pushNamed(context, ForgotPassword.id);
-                        },
-                        child: Text(
-                          'Forgot Password?',
-                          style: TextStyle(color: Colors.teal, fontSize: 20),
-                        ),
-                      ),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                      primary: Color(0xff234499),
+                      textStyle: TextStyle(fontSize: 20)),
+                  onPressed: () {
+                    Navigator.pushNamed(context, ForgotPassword.id);
+                  },
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(color: Colors.teal, fontSize: 20),
+                  ),
+                ),
               )
             ]))));
   }
-  }
-
+}
