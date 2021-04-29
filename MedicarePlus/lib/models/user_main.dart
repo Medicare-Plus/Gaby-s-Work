@@ -1,10 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
-
-class User1 {
+class User_Model {
   String homeCountry;
   bool admin;
 
-  User1(this.homeCountry);
+  User_Model(this.homeCountry);
 
   Map<String, dynamic> toJson() => {
         'homeCountry': homeCountry,
