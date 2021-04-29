@@ -218,6 +218,7 @@ class _SignUpViewState extends State<SignUpView> {
   List<Widget> buildButtons() {
     String _switchButtonText, _newFormState, _submitButtonText;
     bool _showForgotPassword = false;
+    bool _showSocial = true;
 
     if (authFormType == AuthFormType.signIn) {
       _switchButtonText = "Create New Account";
@@ -228,6 +229,7 @@ class _SignUpViewState extends State<SignUpView> {
       _switchButtonText = "Return to Sign In";
       _newFormState = "signIn";
       _submitButtonText = "Submit";
+      _showSocial = false;
     } else {
       _switchButtonText = "Have an Account? Sign In";
       _newFormState = "signIn";
