@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Widgets/widget.dart';
-import 'package:flutter_application_1/pages/SignInScreen.dart';
 
-import 'package:flutter_application_1/pages/email_signup.dart';
+import 'package:flutter_application_1/pages/Views/ForgotPassView.dart';
+import 'package:flutter_application_1/pages/Views/SignInView.dart';
+import 'package:flutter_application_1/pages/Views/SignUpView.dart';
+
 import 'package:flutter_application_1/pages/home.dart';
 import 'package:splashscreen/splashscreen.dart';
 
@@ -28,9 +29,7 @@ class MyApp extends StatelessWidget {
           '/home': (BuildContext context) => Home(),
           SignInScreen.id: (context) => SignInScreen(),
           ForgotPassword.id: (context) => ForgotPassword(),
-          ConfirmEmail.id: (context) => ConfirmEmail(),
           '/signUp': (BuildContext context) => Register(),
-          'Register2': (context) => GeneralInfo(),
         });
   }
 }

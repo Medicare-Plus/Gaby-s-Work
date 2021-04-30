@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Widgets/widget.dart';
+import 'package:flutter_application_1/pages/Views/ForgotPassView.dart';
 
 class SignInScreen extends StatefulWidget {
   static String id = 'sign-in';
@@ -131,6 +131,21 @@ class _SignInScreenState extends State<SignInScreen> {
                   },
                   child: Text(
                     'Forgot Password?',
+                    style: TextStyle(color: Colors.teal, fontSize: 20),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                      primary: Color(0xff234499),
+                      textStyle: TextStyle(fontSize: 20)),
+                  onPressed: () {
+                    Navigator.of(context).pushReplacementNamed('/signUp');
+                  },
+                  child: Text(
+                    'Sign Up',
                     style: TextStyle(color: Colors.teal, fontSize: 20),
                   ),
                 ),

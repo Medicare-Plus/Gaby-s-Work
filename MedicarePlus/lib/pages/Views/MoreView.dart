@@ -78,9 +78,7 @@ class MoreBase extends StatelessWidget {
                     textColor: Color(0xff234499),
                     highlightColor: Colors.grey,
                     label: Text("General Information"),
-                    onPressed: () {
-                      GeneralInfo();
-                    }),
+                    onPressed: () {}),
               ),
               SizedBox(height: 15),
               SizedBox(

@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/Views/SignInView.dart';
 
-import 'package:flutter_application_1/pages/SignInScreen.dart';
 import 'package:flutter_application_1/services/firestore_service.dart';
 
 class Register extends StatefulWidget {
@@ -21,12 +21,18 @@ class _RegisterViewState extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
+    body:
+    SingleChildScrollView();
     final mq = MediaQuery.of(context);
 
-    final logo = Image.asset(
-      "assets/images/title.png",
-      height: mq.size.height / 4,
-    );
+    final Header = Padding(
+        padding: EdgeInsets.only(top: 10.0),
+        child: Text(
+          'Sign Up',
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
+          style: TextStyle(fontSize: 33, color: Color(0xff234499)),
+        ));
 
     final firstNameField = Padding(
         padding: EdgeInsets.all(10.0),
@@ -132,7 +138,7 @@ class _RegisterViewState extends State<Register> {
         ));
 
     final fields = Padding(
-      padding: EdgeInsets.only(top: 5.0),
+      padding: EdgeInsets.only(top: 10.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -150,7 +156,7 @@ class _RegisterViewState extends State<Register> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Padding(
-          padding: EdgeInsets.only(top: 50.0),
+          padding: EdgeInsets.only(top: 0.0),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -165,6 +171,7 @@ class _RegisterViewState extends State<Register> {
               child: Text('Go Back'),
             ),
             MaterialButton(
+              //Next Button
               onPressed: () async {
                 try {
                   await Firebase.initializeApp();
@@ -213,10 +220,10 @@ class _RegisterViewState extends State<Register> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                logo,
+                Header,
                 fields,
                 Padding(
-                  padding: EdgeInsets.only(bottom: 50),
+                  padding: EdgeInsets.only(bottom: 70, top: 0),
                   child: bottom,
                 ),
               ],

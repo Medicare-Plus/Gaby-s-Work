@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/More.dart';
+import 'package:flutter_application_1/pages/Views/HomeView.dart';
+import 'package:flutter_application_1/pages/Views/MoreView.dart';
+import 'package:flutter_application_1/pages/Views/NotifView.dart';
+import 'package:flutter_application_1/pages/Views/PlanView.dart';
+
 import 'package:flutter_application_1/pages/home.dart';
-import 'package:flutter_application_1/pages/home_base.dart';
-import 'package:flutter_application_1/pages/notif.dart';
-import 'package:flutter_application_1/pages/plan.dart';
 
 class NavBar extends StatefulWidget {
   @override
