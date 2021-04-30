@@ -10,6 +10,11 @@ class PlanBase extends StatelessWidget {
         appBar: AppBar(
           title: Text('Plan'),
           backgroundColor: Color(0xff234499),
+          leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: Color(0xff61c198)),
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed('/home');
+              }),
           actions: <Widget>[
             IconButton(
               //logout button

@@ -25,7 +25,9 @@ class MoreBase extends StatelessWidget {
                 backgroundColor: Color(0xff234499),
                 leading: IconButton(
                     icon: Icon(Icons.arrow_back, color: Color(0xff61c198)),
-                    onPressed: () {})),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacementNamed('/home');
+                    })),
             body: SingleChildScrollView(
                 child: Center(
                     child: Column(children: [
@@ -78,7 +80,10 @@ class MoreBase extends StatelessWidget {
                     textColor: Color(0xff234499),
                     highlightColor: Colors.grey,
                     label: Text("General Information"),
-                    onPressed: () {}),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed('/GeneralInfo');
+                    }),
               ),
               SizedBox(height: 15),
               SizedBox(
@@ -101,8 +106,10 @@ class MoreBase extends StatelessWidget {
                     color: Color(0xffeff2f8),
                     textColor: Color(0xff234499),
                     highlightColor: Colors.grey,
-                    label: Text("Payment Method"),
-                    onPressed: () {}),
+                    label: Text("QR Code"),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacementNamed('/QRBase');
+                    }),
               ),
               SizedBox(height: 15),
               SizedBox(
