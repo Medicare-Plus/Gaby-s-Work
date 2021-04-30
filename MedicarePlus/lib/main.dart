@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Widgets/widget.dart';
 import 'package:flutter_application_1/pages/SignInScreen.dart';
 
-import 'package:flutter_application_1/pages/SignUpViews/email_signup_view_2.dart';
 import 'package:flutter_application_1/pages/email_signup.dart';
 import 'package:flutter_application_1/pages/home.dart';
 import 'package:splashscreen/splashscreen.dart';
@@ -31,7 +30,7 @@ class MyApp extends StatelessWidget {
           ForgotPassword.id: (context) => ForgotPassword(),
           ConfirmEmail.id: (context) => ConfirmEmail(),
           '/signUp': (BuildContext context) => Register(),
-          'Register2': (context) => Register_2(),
+          'Register2': (context) => GeneralInfo(),
         });
   }
 }
