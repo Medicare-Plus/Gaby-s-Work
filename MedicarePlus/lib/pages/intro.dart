@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Widgets/auth_service.dart';
+import 'package:flutter_application_1/services/auth_service.dart';
+import 'package:flutter_application_1/pages/SignInScreen.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 import 'home.dart';

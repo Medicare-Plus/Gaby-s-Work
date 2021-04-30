@@ -1,11 +1,23 @@
 class User_Model {
-  String homeCountry;
-  bool admin;
+  final String id;
+  final String fullName;
+  final String email;
+  final String userRole;
 
-  User_Model(this.homeCountry);
+  User_Model({this.id, this.fullName, this.email, this.userRole});
 
-  Map<String, dynamic> toJson() => {
-        'homeCountry': homeCountry,
-        'admin': admin,
-      };
+  User_Model.fromData(Map<String, dynamic> data)
+      : id = data['id'],
+        fullName = data['fullName'],
+        email = data['email'],
+        userRole = data['userRole'];
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'fullName': fullName,
+      'email': email,
+      'userRole': userRole,
+    };
+  }
 }

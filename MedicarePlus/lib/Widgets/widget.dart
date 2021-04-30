@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Widgets/auth_service.dart';
+import 'package:flutter_application_1/services/auth_service.dart';
 import 'package:flutter_application_1/Widgets/provider_widget.dart';
+import 'package:flutter_application_1/pages/SignInScreen.dart';
 import 'package:flutter_application_1/pages/home.dart';
 import 'package:flutter_spinkit/src/double_bounce.dart';
 import 'package:auto_size_text/auto_size_text.dart';

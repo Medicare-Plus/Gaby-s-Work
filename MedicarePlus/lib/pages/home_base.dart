@@ -1,9 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Widgets/auth_service.dart';
+import 'package:flutter_application_1/services/auth_service.dart';
+import 'package:flutter_application_1/pages/SignInScreen.dart';
+import 'package:flutter_application_1/services/firestore_service.dart';
 
 class HomeBase extends StatefulWidget {
   static String id = 'homepage';
+
   @override
   _HomeBaseState createState() => _HomeBaseState();
 }
@@ -11,6 +15,7 @@ class HomeBase extends StatefulWidget {
 class _HomeBaseState extends State<HomeBase> {
   @override
   Widget build(BuildContext context) {
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
@@ -57,17 +62,12 @@ class _HomeBaseState extends State<HomeBase> {
                       //this widget here is placed because it is the widget outside of stack but rather inside column for the list, we made this stack to put stuff on top of the bg
                       SizedBox(height: 30),
                       Container(
-                          child: Align(
-                        //positioning(This is sort  of a janky method)
-                        alignment: AlignmentDirectional.bottomCenter,
-                        child: Text(
-                          "Welcome (name)",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff234499),
-                              fontSize: 20),
-                        ),
-                      )),
+                        child: Align(
+                            //positioning(This is sort  of a janky method)
+                            alignment: AlignmentDirectional.bottomCenter,
+                            child: GetUserName('Users')),
+                      ),
+
                       SizedBox(
                         height: 15,
                       ), //janky spacing
@@ -226,5 +226,37 @@ class _HomeBaseState extends State<HomeBase> {
                   ),
                   SizedBox(height: 75),
                 ])))));
+  }
+}
+
+class GetUserName extends StatelessWidget {
+  final String documentId;
+
+  GetUserName(this.documentId);
+
+  @override
+  Widget build(BuildContext context) {
+    CollectionReference users = FirebaseFirestore.instance.collection('Users');
+
+    return FutureBuilder<DocumentSnapshot>(
+      future: users.doc(documentId).get(),
+      builder:
+          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
+        if (snapshot.hasError) {
+          return Text("Something went wrong");
+        }
+
+        if (snapshot.hasData && !snapshot.data.exists) {
+          return Text("Document does not exist");
+        }
+
+        if (snapshot.connectionState == ConnectionState.done) {
+          Map<String, dynamic> data = snapshot.data.data();
+          return Text("Welcome! ${data['lastName']}");
+        }
+
+        return Text("loading");
+      },
+    );
   }
 }

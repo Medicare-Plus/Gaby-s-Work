@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Widgets/Nav.dart';
-import 'package:flutter_application_1/Widgets/auth_service.dart';
+import 'package:flutter_application_1/services/auth_service.dart';
 
 class Home extends StatelessWidget {
   Home({this.uid});
