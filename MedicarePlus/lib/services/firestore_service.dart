@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:image_picker/image_picker.dart';
 
 FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-class AddUser extends StatelessWidget {
+class UserModel extends StatelessWidget {
   final String id;
   final String firstName;
   final String lastName;
@@ -12,14 +13,14 @@ class AddUser extends StatelessWidget {
   final String email;
   final String userRole;
 
-  AddUser(this.id, this.firstName, this.lastName, this.email, this.userRole);
+  UserModel(this.id, this.firstName, this.lastName, this.email, this.userRole);
 
   @override
   Widget build(BuildContext context) {
     // Create a CollectionReference called users that references the firestore collection
     CollectionReference users = FirebaseFirestore.instance.collection('users');
 
-    Future<void> addUser() {
+    Future<void> UserModel() {
       // Call the user's CollectionReference to add a new user
       return users
           .add({

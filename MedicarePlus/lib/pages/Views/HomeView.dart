@@ -63,7 +63,7 @@ class _HomeBaseState extends State<HomeBase> {
                         child: Align(
                             //positioning(This is sort  of a janky method)
                             alignment: AlignmentDirectional.bottomCenter,
-                            child: GetUserName('Users')),
+                            child: Text('Welcome!')),
                       ),
 
                       SizedBox(
@@ -224,37 +224,5 @@ class _HomeBaseState extends State<HomeBase> {
                   ),
                   SizedBox(height: 75),
                 ])))));
-  }
-}
-
-class GetUserName extends StatelessWidget {
-  final String documentId;
-
-  GetUserName(this.documentId);
-
-  @override
-  Widget build(BuildContext context) {
-    CollectionReference users = FirebaseFirestore.instance.collection('Users');
-
-    return FutureBuilder<DocumentSnapshot>(
-      future: users.doc(documentId).get(),
-      builder:
-          (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-        if (snapshot.hasError) {
-          return Text("Something went wrong");
-        }
-
-        if (snapshot.hasData && !snapshot.data.exists) {
-          return Text("Document does not exist");
-        }
-
-        if (snapshot.connectionState == ConnectionState.done) {
-          Map<String, dynamic> data = snapshot.data.data();
-          return Text("Welcome! ${data['lastName']}");
-        }
-
-        return Text("loading");
-      },
-    );
   }
 }

@@ -27,8 +27,12 @@ dependencies:
   cloud_firestore: "^0.16.0+1"
   auto_size_text: ^2.0.2
   international_phone_input: ^1.0.4
-  firebase_storage: "^7.0.0"
-
+  firebase_storage: 
+  get_it: ^4.0.1
+  cached_network_image: ^2.0.0
+  image_picker :
+  permission_handler: ^5.0.1+1
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -43,3 +47,4 @@ flutter:
 
     - assets/images/title.png
     - assets/images/card.png
+    - assets/images/BackgroundTemp.png

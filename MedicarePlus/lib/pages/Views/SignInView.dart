@@ -104,7 +104,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     labelText: "Password",
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Color(0xff234499),
+                          color: Color(0xff61c198),
                           width: 3.0), // making the border color
                       borderRadius: BorderRadius.circular(10.0),
                     ),
@@ -124,7 +124,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 padding: EdgeInsets.all(10.0),
                 child: TextButton(
                   style: TextButton.styleFrom(
-                      primary: Color(0xff234499),
+                      primary: Color(0xff61c198),
                       textStyle: TextStyle(fontSize: 20)),
                   onPressed: () {
                     Navigator.pushNamed(context, ForgotPassword.id);
