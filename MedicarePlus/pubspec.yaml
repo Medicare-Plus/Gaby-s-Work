@@ -30,7 +30,7 @@ dependencies:
   firebase_storage: 
   get_it: ^4.0.1
   cached_network_image: ^2.0.0
-  image_picker :
+  image_picker : ^0.6.4
   permission_handler: ^5.0.1+1
   
 dev_dependencies:

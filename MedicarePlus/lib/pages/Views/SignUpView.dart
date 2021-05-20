@@ -14,7 +14,6 @@ class _RegisterViewState extends State<Register> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _firstNameController = TextEditingController();
   TextEditingController _lastNameController = TextEditingController();
-  TextEditingController _contactNumberController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _repasswordController = TextEditingController();

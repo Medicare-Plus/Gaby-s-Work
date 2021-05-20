@@ -3,32 +3,32 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
 
-FirebaseFirestore firestore = FirebaseFirestore.instance;
+final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-class UserModel extends StatelessWidget {
+class AddUser extends StatelessWidget {
   final String id;
   final String firstName;
   final String lastName;
-
   final String email;
   final String userRole;
+  final String photoURL;
 
-  UserModel(this.id, this.firstName, this.lastName, this.email, this.userRole);
+  AddUser(this.id, this.firstName, this.lastName, this.email, this.userRole,
+      this.photoURL);
 
   @override
   Widget build(BuildContext context) {
-    // Create a CollectionReference called users that references the firestore collection
     CollectionReference users = FirebaseFirestore.instance.collection('users');
 
-    Future<void> UserModel() {
-      // Call the user's CollectionReference to add a new user
+    Future<void> AddUser() {
       return users
           .add({
-            'uid': id, // John Doe
+            'uid': id,
             'fistname': firstName,
-            'lastname': lastName, // Stokes and Sons
+            'lastname': lastName,
             'email': email,
-            'Role': userRole, // 42
+            'Role': userRole,
+            'photoURL': photoURL,
           })
           .then((value) => print("User Added"))
           .catchError((error) => print("Failed to add user: $error"));
@@ -37,19 +37,18 @@ class UserModel extends StatelessWidget {
 }
 
 Future<void> userSetup(String firstName, String lastName) async {
-  CollectionReference users = FirebaseFirestore.instance.collection('Users');
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
   FirebaseAuth auth = FirebaseAuth.instance;
-
   String email = auth.currentUser.email.toString();
   String uid = auth.currentUser.uid.toString();
-  String profileImage = '';
+  String photoURL = auth.currentUser.photoURL.toString();
 
   users.add({
     'firstName': firstName,
     'lastName': lastName,
     'email': email,
     'uid': uid,
-    'profileImage': profileImage
+    'photoURL': photoURL,
   });
   return;
 }

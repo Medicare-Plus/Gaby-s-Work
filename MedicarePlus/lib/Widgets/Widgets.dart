@@ -7,14 +7,14 @@ import 'package:flutter_application_1/Widgets/Nav.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-class ProfilePage extends StatefulWidget {
+/*class ProfilePage1 extends StatefulWidget {
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  _ProfilePage1State createState() => _ProfilePage1State();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _ProfilePage1State extends State<Profile1Page> {
   @override
-  GlobalKey<_ProfilePageState> _myKey = GlobalKey();
+  GlobalKey<_ProfilePage1State> _myKey = GlobalKey();
 
   Widget build(BuildContext context) {
     Widget bottomSheet() {
@@ -83,3 +83,4 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 }
+*/

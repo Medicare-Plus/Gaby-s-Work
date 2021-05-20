@@ -1,16 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Widgets/Widgets.dart';
 import 'package:flutter_application_1/pages/Views/ForgotPassView.dart';
 import 'package:flutter_application_1/pages/Views/GeneralInfoView.dart';
 import 'package:flutter_application_1/pages/Views/MoreView.dart';
 import 'package:flutter_application_1/pages/Views/QRView.dart';
 import 'package:flutter_application_1/pages/Views/SignInView.dart';
 import 'package:flutter_application_1/pages/Views/SignUpView.dart';
-
 import 'package:flutter_application_1/pages/home.dart';
-
+import 'package:flutter_application_1/pages/Views/ProfilePage.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main() async {
@@ -35,9 +33,8 @@ class MyApp extends StatelessWidget {
           ForgotPassword.id: (context) => ForgotPassword(),
           '/signUp': (BuildContext context) => Register(),
           '/QRBase': (context) => QRBase(),
-          '/GeneralInfo': (context) => GeneralInfo(),
+          '/GeneralInfo': (context) => ProfilePage(),
           '/More': (context) => MoreBase(),
-          '/ImageGetter': (context) => ProfilePage(),
         });
   }
 }
