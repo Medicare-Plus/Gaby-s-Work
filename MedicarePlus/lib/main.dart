@@ -2,13 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/Views/ForgotPassView.dart';
-import 'package:flutter_application_1/pages/Views/GeneralInfoView.dart';
 import 'package:flutter_application_1/pages/Views/MoreView.dart';
 import 'package:flutter_application_1/pages/Views/QRView.dart';
 import 'package:flutter_application_1/pages/Views/SignInView.dart';
 import 'package:flutter_application_1/pages/Views/SignUpView.dart';
+import 'package:flutter_application_1/pages/Views/help%20center.dart';
+import 'package:flutter_application_1/pages/Views/partners.dart';
+import 'package:flutter_application_1/pages/Views/settings.dart';
 import 'package:flutter_application_1/pages/home.dart';
 import 'package:flutter_application_1/pages/Views/ProfilePage.dart';
+import 'package:flutter_application_1/pages/medical%20data.dart';
 import 'package:splashscreen/splashscreen.dart';
 
 void main() async {
@@ -35,6 +38,10 @@ class MyApp extends StatelessWidget {
           '/QRBase': (context) => QRBase(),
           '/GeneralInfo': (context) => ProfilePage(),
           '/More': (context) => MoreBase(),
+          '/Partners': (context) => Partners(),
+          '/MedicalData': (context) => MedData(),
+          '/Settings': (context) => Settings(),
+          '/HelpCen': (context) => HelpCenter(),
         });
   }
 }

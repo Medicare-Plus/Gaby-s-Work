@@ -107,7 +107,9 @@ class MoreBase extends StatelessWidget {
                     textColor: Color(0xff234499),
                     highlightColor: Colors.grey,
                     label: Text("Settings"),
-                    onPressed: () {}),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacementNamed('/Settings');
+                    }),
               ),
               SizedBox(height: 15),
               SizedBox(
@@ -119,7 +121,9 @@ class MoreBase extends StatelessWidget {
                     textColor: Color(0xff234499),
                     highlightColor: Colors.grey,
                     label: Text("Help Center"),
-                    onPressed: () {}),
+                    onPressed: () {
+                      Navigator.of(context).pushReplacementNamed('/HelpCen');
+                    }),
               ),
               SizedBox(height: 15),
               SizedBox(

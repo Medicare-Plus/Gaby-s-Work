@@ -11,7 +11,7 @@ class QRBase extends StatelessWidget {
                 leading: IconButton(
                     icon: Icon(Icons.arrow_back, color: Color(0xff61c198)),
                     onPressed: () {
-                      Navigator.of(context).pushReplacementNamed('/home');
+                      Navigator.of(context).pushReplacementNamed('/More');
                     })),
             body: SingleChildScrollView(
                 //This allows to scrollz, this should be declared to larrge lists otherwise the rest of the list will not display and have errors

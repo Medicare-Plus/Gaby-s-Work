@@ -127,8 +127,10 @@ class _HomeBaseState extends State<HomeBase> {
                           width: 90,
                           height: 100,
                           child: TextButton(
-                              onPressed:
-                                  () {}, //Thee should be a navigator for these but we have left it on a blank state, when null it would be in an untouchable state
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushReplacementNamed('/Partners');
+                              }, //Thee should be a navigator for these but we have left it on a blank state, when null it would be in an untouchable state
                               style: ButtonStyle(
                                   backgroundColor:
                                       MaterialStateProperty.all<Color>(
@@ -152,7 +154,10 @@ class _HomeBaseState extends State<HomeBase> {
                           width: 90,
                           height: 100,
                           child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.of(context)
+                                    .pushReplacementNamed('/MedicalData');
+                              },
                               style: ButtonStyle(
                                   backgroundColor:
                                       MaterialStateProperty.all<Color>(
